@@ -1,3 +1,13 @@
 body {
-  background-color: yellow;
+  background-color: pink;
+  transform: rotate(-45deg)
+}
+
+:local(.nav) {
+  color: #233523;
+  font-size: 42px;
+}
+
+.footer  {
+  height: 50px;
 }

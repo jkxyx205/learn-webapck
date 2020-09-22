@@ -3,9 +3,14 @@ import $ from 'jquery';
 import html from './include.html';
 import Vue from 'vue';
 import App from './App.vue';
-require('./index.css');
+let styles = require('./index.css');
+// import styles from "./index.css";
 
 bar();
+
+// console.log(styles)
+
+$('.nav').addClass(styles.nav)
 
 $(function() {
   $('#btn').on('click', function() {
