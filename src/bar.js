@@ -1,4 +1,8 @@
 export default function bar() {
   //
-  console.log('this is from bar..')
+  sayHello()
+}
+
+let sayHello = () => {
+  console.log('hello this is from bar..')
 }

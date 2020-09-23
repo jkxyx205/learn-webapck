@@ -18,6 +18,16 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
       { 
         test: /\.css$/, 
         use: [
@@ -67,6 +77,25 @@ module.exports = {
       // },
       { test: /\.(html|txt)$/, use: 'raw-loader' },
       { test: /\.vue$/, use: 'vue-loader' },
+      // {
+      //   test: /\.(png|jpeg|jpg|gif)$/i,
+      //   use: 'file-loader'
+      // }
+      {
+        test: /\.(png|jpeg|jpg|gif)$/i,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 1024 * 12,
+            name: '[path][name][hash:8].[ext]', // file-loader配置项
+            esModule: false
+          }
+        }
+      },
+      {
+        test: /\.(woff2|woff|svg|eot|ttf)$/,
+        loader: 'file-loader',
+      },
     ]
   },
   plugins: [

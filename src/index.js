@@ -5,6 +5,7 @@ import Vue from 'vue';
 import App from './App.vue';
 let styles = require('./index.css');
 // import styles from "./index.css";
+let avatar = require('./assets/avatar.jpg')
 
 bar();
 
@@ -17,6 +18,9 @@ $(function() {
     alert('click me')
     $('body').append(html);
   })
+ console.log(avatar)
+  // $('body').append('<img src="'+avatar.default+'">') //  如果esModule = true，使用对象default✍️
+  $('body').append('<img src="'+avatar+'">') 
 })
 
 new Vue({
