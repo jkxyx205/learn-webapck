@@ -1,39 +1,36 @@
-import bar from './bar';
 import $ from 'jquery';
-// import html from './include.html';
 import Vue from 'vue';
+import bar from './bar';
+// import html from './include.html';
 import App from './App.vue';
-let styles = require('./index.css');
+// import symbolData from './assets/svg/warning.svg';
+
+const styles = require('./index.css');
 // import styles from "./index.css";
-let avatar = require('./assets/avatar.jpg')
-
-import symbolData from './assets/svg/warning.svg';
-
-console.log(symbolData)
+const avatar = require('./assets/avatar.jpg');
+// console.log(symbolData);
 bar();
-
 // console.log(styles)
 
-$('.nav').addClass(styles.nav)
+$('.nav').addClass(styles.nav);
 
-$(function() {
-  $('#btn').on('click', function() {
-    alert('click me')
+$(() => {
+  $('#btn').on('click', () => {
+    // alert('click me');
     // $('body').append(html);
-  })
-//  console.log(avatar)
+  });
+  console.log(avatar)
   // $('body').append('<img src="'+avatar.default+'">') //  如果esModule = true，使用对象default✍️
-  $('body').append('<img src="'+avatar+'">') 
+  $('body').append(`<img src="${avatar}">`);
 })
 
 new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount('#app')
 
-
 // requires and returns all modules that match
-const requireAll = requireContext => requireContext.keys().map(requireContext);
- 
+const requireAll = (requireContext) => requireContext.keys().map(requireContext);
+
 // import all svg
 const req = require.context('./assets/svg', true, /\.svg$/);
 requireAll(req);
@@ -46,5 +43,3 @@ requireAll(req);
 // });
 
 // console.log(symbolData)
-
-

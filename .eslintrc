@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-console": "off",
+    "semi": "off",
+    "max-len": "off"
+    // "semi": ["error", "always"]
+  }
+}

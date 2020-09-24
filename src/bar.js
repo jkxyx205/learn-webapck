@@ -1,8 +1,7 @@
-export default function bar() {
-  //
-  sayHello()
-}
+const sayHello = () => {
+  console.log('hello this is from bar..');
+};
 
-let sayHello = () => {
-  console.log('hello this is from bar..')
+export default function bar() {
+  sayHello();
 }

@@ -118,6 +118,14 @@ module.exports = {
           outputPath: 'font'
         }
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true // 自动修复
+        }
+      },
       { // html中的img src能正确解析
         test: /\.html$/,
         loader: 'html-loader',
@@ -155,6 +163,8 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000,
-    progress: true
+    progress: true,
+    compress: true, // gzip压缩
+    open: true // 自动打开浏览器
   }
 };
