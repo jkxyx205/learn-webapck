@@ -123,7 +123,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          fix: true // 自动修复
+          fix: false // 自动修复
         }
       },
       { // html中的img src能正确解析
@@ -155,8 +155,15 @@ module.exports = {
     })
   ],
   resolve: {
+    modules:[path.resolve('node_modules')],
+    extensions: ['.js', '.json', '.vue'],
+    enforceExtension: false,
+    enforceModuleExtension: false,
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
+      'vue$': 'vue/dist/vue.common.js',
+      'assets': path.resolve(__dirname, 'src/assets'),
+      'components': path.resolve(__dirname, 'src/components')
     }
   },
   devServer: {
@@ -164,7 +171,9 @@ module.exports = {
     compress: true,
     port: 9000,
     progress: true,
+    hot: true, // 开启HMR功能
     compress: true, // gzip压缩
     open: true // 自动打开浏览器
-  }
+  },
+  devtool: 'source-map'
 };

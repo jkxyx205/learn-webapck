@@ -1,6 +1,6 @@
 <template>
   <div id="container" :class='$style.container'>
-    this is app area Good =>  {{ name }} !!
+    <h1>this is app area Good God =>  {{ name }} !!</h1>
     <div>hello</div>
     <div :class="moduleA.text">test</div>
     <button class="btn btn-secondary" @click="todo">TODO</button>
@@ -23,7 +23,10 @@
   </div>
 </template>
 <script>
-  import icon from './components/Icon/index.vue';
+  // import icon from './components/Icon/index.vue';
+  // import icon from './components/Icon/index';
+  // import icon from './components/Icon';
+  import icon from 'components/Icon';
   import svg from '@/assets/svg/logout.svg';
 
   console.log(svg)

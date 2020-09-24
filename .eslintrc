@@ -3,7 +3,9 @@
   "rules": {
     "no-console": "off",
     "semi": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
     // "semi": ["error", "always"]
   }
 }

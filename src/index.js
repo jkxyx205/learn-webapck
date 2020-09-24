@@ -2,10 +2,11 @@ import $ from 'jquery';
 import Vue from 'vue';
 import bar from './bar';
 // import html from './include.html';
-import App from './App.vue';
+import App from './App';
 // import symbolData from './assets/svg/warning.svg';
 
 const styles = require('./index.css');
+require('./style.css');
 // import styles from "./index.css";
 const avatar = require('./assets/avatar.jpg');
 // console.log(symbolData);
@@ -43,3 +44,9 @@ requireAll(req);
 // });
 
 // console.log(symbolData)
+console.log(module)
+if (module.hot) {
+  module.hot.accept('./bar', () => {
+    console.log('hello..')
+  })
+}
