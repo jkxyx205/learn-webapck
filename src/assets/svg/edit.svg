@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>形状</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M891,3808.75676 L892.582662,3804.21622 L895.162162,3806.98815 L891,3808.75676 Z M895.813423,3806.10811 L893.27027,3803.44725 L900.185743,3796.27027 L902.72973,3798.93113 L895.813423,3806.10811 Z M903.400618,3798.54054 L900.837838,3795.74368 L902.119228,3794.34568 C902.317792,3794.12524 902.596346,3794 902.888062,3794 C903.179778,3794 903.458332,3794.12524 903.656896,3794.34568 L904.681168,3795.4646 C905.106277,3795.93863 905.106277,3796.67024 904.681168,3797.14427 L903.400618,3798.54054 Z" id="path-1"></path>
+    </defs>
+    <g id="组件规范" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="关于输入框（以登录页面为例)" transform="translate(-891.000000, -3794.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="形状" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

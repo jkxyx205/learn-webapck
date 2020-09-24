@@ -1,6 +1,7 @@
 body {
+  padding: 0 300px;
   background: pink url(./assets/logo.png);
-  transform: rotate(-45deg)
+  transform: rotate(-45deg);
 }
 
 :local(.nav) {
@@ -12,6 +13,7 @@ body {
   color: #233523;
   font-size: 42px;
   background-color: #fff;
+  /* background-color: #fff url(./assets/svg/upload.svg); */
 }
 
 .footer  {
@@ -27,7 +29,7 @@ body {
   url('./assets/font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('./assets/font/iconfont.svg') format('svg'); /* iOS 4.1- */
 }
-/*css module=true 起效果*/
+/*css module=true 起作用*/
 :global(.iconfont) {
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -43,5 +45,9 @@ body {
   
   .icon-home:before {
     content: "\e604";
+  }
+
+  .icon-svg {
+    width: 40px;
   }
 }

@@ -4,13 +4,15 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    // publicPath: 'http://cdn.devyean.com'
   },
   optimization: {
     minimize: true, //Update this to true or false
@@ -75,12 +77,28 @@ module.exports = {
       //     { loader: 'sass-loader' }
       //   ]
       // },
-      { test: /\.(html|txt)$/, use: 'raw-loader' },
+      // { test: /\.(html|txt)$/, use: 'raw-loader' },
       { test: /\.vue$/, use: 'vue-loader' },
       // {
       //   test: /\.(png|jpeg|jpg|gif)$/i,
       //   use: 'file-loader'
       // }
+      {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, "src/assets/svg"),
+        use:[ 
+          { loader: 'svg-sprite-loader',
+            options: {
+              extract: false,
+              symbolId: filePath => path.basename(filePath),
+              outputPath: "static/svgIcons/",
+              publicPath: "static/svgIcons/",
+              spriteFilename: "svg-sprite.svg"
+            },
+          },
+          'svgo-loader'
+        ]
+      },
       {
         test: /\.(png|jpeg|jpg|gif)$/i,
         use: {
@@ -93,19 +111,26 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff2|woff|svg|eot|ttf)$/,
+        test: /\.(woff2|woff|eot|ttf|svg)$/, // 字体文件
+        include: path.resolve(__dirname, "src/assets/font"),
         loader: 'file-loader',
+        options: {
+          outputPath: 'font'
+        }
       },
+      { // html中的img src能正确解析
+        test: /\.html$/,
+        loader: 'html-loader',
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
       hash: true,
-      minify: true,
-      // publicPath: path.join('http://localhost:9000', '/assets/'),
-      }
-    ),
+      minify: false,
+      publicPath: '/asset' // 这个publicPath有什么用？
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
@@ -113,8 +138,19 @@ module.exports = {
       chunkFilename: '[id].css',
     }),  
     // make sure to include the plugin!
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new SpriteLoaderPlugin({
+      plainSprite: true,
+      spriteAttrs: {
+        id: 'my-custom-sprite-id'
+      }
+    })
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
