@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint", // tootlbar jsx报 error  Parsing error: Unexpected token <
   "extends": "airbnb-base",
   "rules": {
     "no-console": "off",
@@ -6,6 +7,7 @@
     "max-len": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
+    "comma-dangle": "off"
     // "semi": ["error", "always"]
   }
 }

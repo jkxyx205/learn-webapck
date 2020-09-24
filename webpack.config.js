@@ -20,6 +20,14 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /.jsx?$/,
+      //   loader: 'babel-loader',
+      //   exclude: /node_modules/,
+      //   query: {
+      //     presets: ['es2015', 'react', 'stage-3']
+      //   }
+      // },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,

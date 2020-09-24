@@ -16,7 +16,7 @@
     </svg> -->
 
     <i class="icon iconfont icon-home" style="font-size: 42px;"></i>
-
+    <toolbar title="你好中国"></toolbar>
     <icon name="user" className="icon-svg-nav"/>
     <icon name="label"/>
     <icon name="deploy"/>
@@ -28,6 +28,7 @@
   // import icon from './components/Icon';
   import icon from 'components/Icon';
   import svg from '@/assets/svg/logout.svg';
+  import toolbar from 'components/toolbar'
 
   console.log(svg)
 
@@ -45,7 +46,7 @@
     mounted() {
       // debugger
     },
-    components: {icon},
+    components: { icon, toolbar },
     methods: {
       todo() {
         alert('todo')
