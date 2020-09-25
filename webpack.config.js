@@ -17,6 +17,9 @@ module.exports = {
   optimization: {
     minimize: true, //Update this to true or false
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})], // css 压缩
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   module: {
     rules: [

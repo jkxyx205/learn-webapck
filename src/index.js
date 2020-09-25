@@ -1,16 +1,28 @@
 import $ from 'jquery';
 import Vue from 'vue';
-import bar from './bar';
+
 import html from './include.html';
 import App from './App';
 // import symbolData from './assets/svg/warning.svg';
+
+// import bar from './bar';
+
+// console.log(typeof bar); // function
+// 会单独打包，异步import要放在其他import的最后，返回值是一个Promise对象
+import('./bar').then((bar) => {
+  // console.log(bar)
+  // eslint-disable-next-line
+  bar.default() // bar是一个模块对象
+}).catch(() => {
+  console.log('加载失败...')
+});
 
 const styles = require('./index.css');
 require('./style.css');
 // import styles from "./index.css";
 const avatar = require('./assets/avatar.jpg');
 // console.log(symbolData);
-bar();
+// bar();
 // console.log(styles)
 
 $('.nav').addClass(styles.nav);
