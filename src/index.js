@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Vue from 'vue';
 import bar from './bar';
-// import html from './include.html';
+import html from './include.html';
 import App from './App';
 // import symbolData from './assets/svg/warning.svg';
 
@@ -18,7 +18,7 @@ $('.nav').addClass(styles.nav);
 $(() => {
   $('#btn').on('click', () => {
     // alert('click me');
-    // $('body').append(html);
+    $('body').append(html);
   });
   console.log(avatar)
   // $('body').append('<img src="'+avatar.default+'">') //  如果esModule = true，使用对象default✍️

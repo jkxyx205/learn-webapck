@@ -174,6 +174,9 @@ module.exports = {
       'components': path.resolve(__dirname, 'src/components')
     }
   },
+  externals: {
+    jquery: 'jQuery'
+  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
@@ -183,5 +186,5 @@ module.exports = {
     compress: true, // gzip压缩
     open: true // 自动打开浏览器
   },
-  devtool: 'source-map'
+  devtool: 'source-map' // error 映射追踪到源代码，而不是打包编译后的代码
 };
