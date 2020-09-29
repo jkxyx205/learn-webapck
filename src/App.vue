@@ -26,9 +26,11 @@
   // import icon from './components/Icon/index.vue';
   // import icon from './components/Icon/index';
   // import icon from './components/Icon';
+  require('lodash')
   import icon from 'components/Icon';
   import svg from '@/assets/svg/logout.svg';
   import toolbar from 'components/toolbar'
+  
 
   console.log(svg)
 
@@ -45,8 +47,12 @@
     },
     mounted() {
       // debugger
+      console.log(_.compact([0, 1, false, 2, '', 3]))
     },
-    components: { icon, toolbar },
+    components: { icon,
+      // toolbar,
+     'toolbar': () => import('components/toolbar') 
+    }, // 异步挂载
     methods: {
       todo() {
         alert('todo')

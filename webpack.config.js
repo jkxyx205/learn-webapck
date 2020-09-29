@@ -154,7 +154,7 @@ module.exports = {
       template: './index.html',
       hash: true,
       minify: false,
-      publicPath: '/asset' // 这个publicPath有什么用？
+      // publicPath: '/asset' // 这个publicPath有什么用？
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -178,13 +178,11 @@ module.exports = {
     enforceModuleExtension: false,
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      'vue$': 'vue/dist/vue.common.js',
-      'assets': path.resolve(__dirname, 'src/assets'),
       'components': path.resolve(__dirname, 'src/components')
     }
   },
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery', // cdn引用，不需要打包
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),

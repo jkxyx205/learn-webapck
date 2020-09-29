@@ -3,6 +3,7 @@ import Vue from 'vue';
 
 import html from './include.html';
 import App from './App';
+
 // import symbolData from './assets/svg/warning.svg';
 
 // import bar from './bar';

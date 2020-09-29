@@ -15,7 +15,10 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
     "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
     "vue": "^2.6.12"
   },
   "devDependencies": {
